@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRetroSound } from "./RetroSound";
+import { useState, useEffect, useCallback } from "react";
+import { useRetroSound } from "@/components/RetroSound";
 import clsx from "clsx";
 
 interface RetroTypingProps {
@@ -34,7 +34,7 @@ export const RetroTyping = ({
         try {
           playTypingSound();
         } catch (error) {
-          console.log("Typing sesi çalınamadı:", error);
+          console.warn("Typing sesi çalınamadı:", error);
         }
       }, speed);
       return () => clearTimeout(timeout);
@@ -44,7 +44,7 @@ export const RetroTyping = ({
       try {
         playBeepSound();
       } catch (error) {
-        console.log("Beep sesi çalınamadı:", error);
+        console.warn("Beep sesi çalınamadı:", error);
       }
     }
   }, [currentIndex, text, speed, onComplete, playTypingSound, playBeepSound]);
@@ -58,6 +58,13 @@ export const RetroTyping = ({
     }, 500);
     return () => clearInterval(interval);
   }, [showCursor]);
+
+  // Text değiştiğinde state'i sıfırla
+  useEffect(() => {
+    setDisplayText("");
+    setCurrentIndex(0);
+    setIsComplete(false);
+  }, [text]);
 
   return (
     <span className={className}>

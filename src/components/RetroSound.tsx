@@ -3,16 +3,18 @@ import { useEffect, useRef, useCallback } from "react";
 
 export const useRetroSound = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
+  const isInitializedRef = useRef(false);
 
   // AudioContext'i başlat
   const initAudioContext = useCallback(() => {
-    if (!audioContextRef.current) {
+    if (!audioContextRef.current && !isInitializedRef.current) {
       try {
         audioContextRef.current = new (window.AudioContext ||
           (window as unknown as { webkitAudioContext: typeof AudioContext })
             .webkitAudioContext)();
+        isInitializedRef.current = true;
       } catch (error) {
-        console.log("AudioContext başlatılamadı:", error);
+        console.warn("AudioContext başlatılamadı:", error);
       }
     }
   }, []);
@@ -44,7 +46,7 @@ export const useRetroSound = () => {
       oscillator.start(audioContextRef.current.currentTime);
       oscillator.stop(audioContextRef.current.currentTime + 0.05);
     } catch (error) {
-      console.log("Typing sesi çalınamadı:", error);
+      console.warn("Typing sesi çalınamadı:", error);
     }
   }, [initAudioContext]);
 
@@ -75,7 +77,7 @@ export const useRetroSound = () => {
       oscillator.start(audioContextRef.current.currentTime);
       oscillator.stop(audioContextRef.current.currentTime + 0.1);
     } catch (error) {
-      console.log("Beep sesi çalınamadı:", error);
+      console.warn("Beep sesi çalınamadı:", error);
     }
   }, [initAudioContext]);
 
@@ -85,14 +87,17 @@ export const useRetroSound = () => {
       initAudioContext();
       document.removeEventListener("click", handleUserInteraction);
       document.removeEventListener("keydown", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
     };
 
     document.addEventListener("click", handleUserInteraction);
     document.addEventListener("keydown", handleUserInteraction);
+    document.addEventListener("touchstart", handleUserInteraction);
 
     return () => {
       document.removeEventListener("click", handleUserInteraction);
       document.removeEventListener("keydown", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
     };
   }, [initAudioContext]);
 

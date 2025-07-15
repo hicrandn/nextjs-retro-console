@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import clsx from "clsx";
-import { useRetroSound } from "./RetroSound";
+import { useRetroSound } from "@/components/RetroSound";
 import { RetroTerminal } from "./RetroTerminal";
 import { RetroTyping } from "./RetroTyping";
 import { RetroBackground } from "./RetroBackground";
@@ -13,7 +13,7 @@ export const HireMe = () => {
   const [isSubtitleComplete, setIsSubtitleComplete] = useState(false);
   const [dinoPosition, setDinoPosition] = useState(0);
   const [glitchActive, setGlitchActive] = useState(false);
-  const { playTypingSound } = useRetroSound();
+  const { playTypingSound: _playTypingSound } = useRetroSound();
 
   // Glitch efekti
   useEffect(() => {

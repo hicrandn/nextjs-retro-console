@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRetroSound } from "./RetroSound";
 
 interface RetroTerminalProps {
@@ -10,23 +10,26 @@ export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
   const { playTypingSound, playBeepSound } = useRetroSound();
 
-  // Terminal komutları
-  const terminalCommands = [
-    "> INITIALIZING SYSTEM...",
-    "> LOADING DEVELOPER PROFILE...",
-    "> SCANNING SKILLS...",
-    "> React: ██████████ 100%",
-    "> Next.js: ██████████ 100%",
-    "> TypeScript: ██████████ 100%",
-    "> Node.js: ██████████ 100%",
-    "> DATABASE: PostgreSQL, MongoDB",
-    "> STATUS: READY FOR HIRE",
-    "> CONTACT INFORMATION:",
-    "> 📧 hicran.apaydin@gmail.com",
-    "> 📱 +90 555 123 4567",
-    "> 🌐 github.com/hicrandn",
-    "> PRESS ANY KEY TO CONTINUE...",
-  ];
+  // Terminal komutları - memoized
+  const terminalCommands = useMemo(
+    () => [
+      "> INITIALIZING SYSTEM...",
+      "> LOADING DEVELOPER PROFILE...",
+      "> SCANNING SKILLS...",
+      "> React: ██████████ 100%",
+      "> Next.js: ██████████ 100%",
+      "> TypeScript: ██████████ 100%",
+      "> Node.js: ██████████ 100%",
+      "> DATABASE: PostgreSQL, MongoDB",
+      "> STATUS: READY FOR HIRE",
+      "> CONTACT INFORMATION:",
+      "> 📧 hicran.apaydin@gmail.com",
+      "> 📱 +90 555 123 4567",
+      "> 🌐 github.com/hicrandn",
+      "> PRESS ANY KEY TO CONTINUE...",
+    ],
+    []
+  );
 
   // Terminal komutları animasyonu
   useEffect(() => {
@@ -39,7 +42,7 @@ export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
         try {
           playTypingSound(); // Terminal typing sesi
         } catch (error) {
-          console.log("Terminal typing sesi çalınamadı:", error);
+          console.warn("Terminal typing sesi çalınamadı:", error);
         }
         lineIndex++;
       } else {
@@ -47,19 +50,26 @@ export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
         try {
           playBeepSound(); // Terminal tamamlandı sesi
         } catch (error) {
-          console.log("Terminal beep sesi çalınamadı:", error);
+          console.warn("Terminal beep sesi çalınamadı:", error);
         }
       }
     }, 800);
     return () => clearInterval(terminalInterval);
-  }, [isActive, playTypingSound, playBeepSound]);
+  }, [isActive, terminalCommands, playTypingSound, playBeepSound]);
+
+  // isActive değiştiğinde terminal'i sıfırla
+  useEffect(() => {
+    if (!isActive) {
+      setTerminalLines([]);
+    }
+  }, [isActive]);
 
   return (
     <div className="p-3">
       <div className="text-green-400 font-mono text-xs space-y-1">
         {terminalLines.map((line, index) => (
           <div
-            key={index}
+            key={`${line}-${index}`}
             className="animate-terminal-type"
             style={{ animationDelay: `${index * 0.1}s` }}
           >

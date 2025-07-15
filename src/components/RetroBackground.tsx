@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 interface RetroBackgroundProps {
   children: React.ReactNode;
@@ -7,8 +7,12 @@ interface RetroBackgroundProps {
 
 export const RetroBackground = ({ children }: RetroBackgroundProps) => {
   const [matrixChars, setMatrixChars] = useState<string[]>([]);
-  const matrixCharacters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?";
+
+  // Matrix karakterleri - memoized
+  const matrixCharacters = useMemo(
+    () => "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?",
+    []
+  );
 
   // Matrix rain efekti
   useEffect(() => {
@@ -24,7 +28,7 @@ export const RetroBackground = ({ children }: RetroBackgroundProps) => {
       });
     }, 100);
     return () => clearInterval(matrixInterval);
-  }, []);
+  }, [matrixCharacters]);
 
   return (
     <div className="min-h-screen bg-[#0000AA] flex items-center justify-center p-4 relative overflow-hidden">
@@ -54,7 +58,7 @@ export const RetroBackground = ({ children }: RetroBackgroundProps) => {
       <div className="absolute inset-0 pointer-events-none z-5">
         {matrixChars.map((char, index) => (
           <div
-            key={index}
+            key={`matrix-${index}-${char}`}
             className="absolute text-green-400 font-mono text-xs opacity-70"
             style={{
               left: `${Math.random() * 100}%`,

@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Funny Things - Retro Portfolio
 
-## Getting Started
+Bu proje, retro tarzında bir portföy web sitesidir. Next.js 15, React 19, TypeScript ve Tailwind CSS kullanılarak geliştirilmiştir.
 
-First, run the development server:
+## 🚀 Özellikler
+
+- **Retro Tasarım**: CRT monitör efektleri ve retro animasyonlar
+- **Typing Animasyonu**: Karakter karakter yazma efekti
+- **Ses Efektleri**: Retro ses efektleri ve beep sesleri
+- **Matrix Rain**: Arka planda düşen karakterler
+- **Responsive Tasarım**: Tüm cihazlarda uyumlu
+- **Error Handling**: Kapsamlı hata yönetimi
+- **Performance Optimized**: React best practices ile optimize edilmiş
+
+## 🛠️ Teknolojiler
+
+- **Next.js 15** - React framework
+- **React 19** - UI kütüphanesi
+- **TypeScript** - Tip güvenliği
+- **Tailwind CSS 4** - Styling
+- **Radix UI** - UI bileşenleri
+- **Lucide React** - İkonlar
+
+## 📦 Kurulum
 
 ```bash
-npm run dev
-# or
+# Bağımlılıkları yükle
+yarn install
+
+# Geliştirme sunucusunu başlat
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+yarn build
+
+# Production sunucusunu başlat
+yarn start
+
+# Linting
+yarn lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Proje Yapısı
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Ana layout
+│   ├── page.tsx           # Ana sayfa
+│   ├── loading.tsx        # Loading sayfası
+│   ├── not-found.tsx      # 404 sayfası
+│   ├── global-error.tsx   # Global error sayfası
+│   └── globals.css        # Global stiller
+├── components/            # React bileşenleri
+│   ├── HireMe.tsx        # Ana portföy bileşeni
+│   ├── RetroTyping.tsx   # Typing animasyonu
+│   ├── RetroTerminal.tsx # Terminal efekti
+│   ├── RetroBackground.tsx # Arka plan efektleri
+│   ├── RetroSound.tsx    # Ses efektleri hook'u
+│   ├── ErrorBoundary.tsx # Hata sınırı
+│   └── ui/               # UI bileşenleri
+└── lib/                  # Yardımcı fonksiyonlar
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Bileşenler
 
-## Learn More
+### RetroTyping
 
-To learn more about Next.js, take a look at the following resources:
+Karakter karakter yazma animasyonu. Ses efektleri ile birlikte çalışır.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### RetroTerminal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Terminal benzeri komut çıktıları. Portföy bilgilerini gösterir.
 
-## Deploy on Vercel
+### RetroBackground
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Matrix rain efekti ve CRT scanlines ile retro arka plan.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### RetroSound
+
+Web Audio API kullanarak retro ses efektleri üretir.
+
+## 🔧 Geliştirme
+
+### Kod Standartları
+
+- TypeScript strict mode
+- ESLint ile kod kalitesi
+- Prettier ile kod formatı
+- React best practices
+
+### Performance Optimizasyonları
+
+- useCallback ve useMemo kullanımı
+- Lazy loading
+- Error boundaries
+- Optimized re-renders
+
+## 🚀 Deployment
+
+Bu proje Vercel'de deploy edilmek üzere optimize edilmiştir:
+
+```bash
+# Vercel CLI ile deploy
+vercel
+
+# Veya GitHub'dan otomatik deploy
+```
+
+## 📝 Lisans
+
+MIT License
+
+## 👨‍💻 Geliştirici
+
+**Hicran Apaydin** - Full Stack Developer
+
+- 📧 hicran.apaydin@gmail.com
+- 🌐 github.com/hicrandn
