@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import clsx from "clsx";
-import { useRetroSound } from "@/components/RetroSound";
+
 import { RetroTerminal } from "./RetroTerminal";
 import { RetroTyping } from "./RetroTyping";
 import { RetroBackground } from "./RetroBackground";
@@ -13,7 +13,6 @@ export const HireMe = () => {
   const [isSubtitleComplete, setIsSubtitleComplete] = useState(false);
   const [dinoPosition, setDinoPosition] = useState(0);
   const [glitchActive, setGlitchActive] = useState(false);
-  const { playTypingSound: _playTypingSound } = useRetroSound();
 
   // Glitch efekti
   useEffect(() => {
@@ -42,7 +41,7 @@ export const HireMe = () => {
       <div className="relative z-10">
         <Card
           className={clsx(
-            "w-120 min-h-[18rem] bg-black/60 backdrop-blur-xl border-green-400/30 relative overflow-hidden transition-all duration-200"
+            "w-120 min-h-[18rem] bg-black/50 backdrop-blur-sm border-green-400/30 relative overflow-hidden transition-all duration-200 "
           )}
         >
           {/* Glassmorphism İç Katman */}
@@ -84,7 +83,7 @@ export const HireMe = () => {
               )}
             >
               <RetroTyping
-                text="FULL-STACK DEVELOPER"
+                text="Front-end Developer "
                 speed={100}
                 onComplete={() => setIsSubtitleComplete(true)}
                 className="text-[#CCCCCC] text-sm drop-shadow-md tracking-wide font-press-start-2p"

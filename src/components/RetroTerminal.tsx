@@ -20,7 +20,7 @@ export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
       "> Next.js: ██████████ 100%",
       "> TypeScript: ██████████ 100%",
       "> Node.js: ██████████ 100%",
-      "> DATABASE: PostgreSQL, MongoDB",
+      "> JavaScript: ██████████ 100%",
       "> STATUS: READY FOR HIRE",
       "> CONTACT INFORMATION:",
       "> 📧 hicran.apaydin@gmail.com",

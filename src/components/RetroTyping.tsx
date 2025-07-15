@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useRetroSound } from "@/components/RetroSound";
 import clsx from "clsx";
 
@@ -20,7 +20,6 @@ export const RetroTyping = ({
 }: RetroTypingProps) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
   const { playTypingSound } = useRetroSound();
 
@@ -39,7 +38,6 @@ export const RetroTyping = ({
       }, speed);
       return () => clearTimeout(timeout);
     } else {
-      setIsComplete(true);
       onComplete?.();
     }
   }, [currentIndex, text, speed, onComplete, playTypingSound]);
@@ -58,7 +56,6 @@ export const RetroTyping = ({
   useEffect(() => {
     setDisplayText("");
     setCurrentIndex(0);
-    setIsComplete(false);
   }, [text]);
 
   return (
