@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,14 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Press Start 2P fontu için
-const pressStart2P = {
+const pressStart2P = Press_Start_2P({
   variable: "--font-press-start-2p",
-  className: "font-press-start-2p",
-  style: {
-    fontFamily: "'Press Start 2P', cursive",
-  },
-};
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Hire Me - Full Stack Developer",
@@ -43,7 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable}`}
+      >
         {children}
       </body>
     </html>

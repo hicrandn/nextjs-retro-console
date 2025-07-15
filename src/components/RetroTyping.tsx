@@ -22,7 +22,7 @@ export const RetroTyping = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
-  const { playTypingSound, playBeepSound } = useRetroSound();
+  const { playTypingSound } = useRetroSound();
 
   // Typing animasyonu
   useEffect(() => {
@@ -41,13 +41,8 @@ export const RetroTyping = ({
     } else {
       setIsComplete(true);
       onComplete?.();
-      try {
-        playBeepSound();
-      } catch (error) {
-        console.warn("Beep sesi çalınamadı:", error);
-      }
     }
-  }, [currentIndex, text, speed, onComplete, playTypingSound, playBeepSound]);
+  }, [currentIndex, text, speed, onComplete, playTypingSound]);
 
   // Cursor blink animasyonu
   useEffect(() => {

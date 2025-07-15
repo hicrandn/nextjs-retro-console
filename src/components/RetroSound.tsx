@@ -50,37 +50,6 @@ export const useRetroSound = () => {
     }
   }, [initAudioContext]);
 
-  // Beep sesi oluştur
-  const playBeepSound = useCallback(() => {
-    try {
-      initAudioContext();
-      if (!audioContextRef.current) return;
-
-      const oscillator = audioContextRef.current.createOscillator();
-      const gainNode = audioContextRef.current.createGain();
-
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContextRef.current.destination);
-
-      oscillator.frequency.setValueAtTime(
-        1200,
-        audioContextRef.current.currentTime
-      );
-      oscillator.type = "square";
-
-      gainNode.gain.setValueAtTime(0.1, audioContextRef.current.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(
-        0.01,
-        audioContextRef.current.currentTime + 0.1
-      );
-
-      oscillator.start(audioContextRef.current.currentTime);
-      oscillator.stop(audioContextRef.current.currentTime + 0.1);
-    } catch (error) {
-      console.warn("Beep sesi çalınamadı:", error);
-    }
-  }, [initAudioContext]);
-
   useEffect(() => {
     // Kullanıcı etkileşimi gerekiyor, bu yüzden click event ile başlat
     const handleUserInteraction = () => {
@@ -101,5 +70,5 @@ export const useRetroSound = () => {
     };
   }, [initAudioContext]);
 
-  return { playTypingSound, playBeepSound };
+  return { playTypingSound };
 };

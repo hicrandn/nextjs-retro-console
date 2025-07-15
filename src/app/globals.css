@@ -121,6 +121,11 @@
   }
 }
 
+/* Press Start 2P Font */
+.font-press-start-2p {
+  font-family: var(--font-press-start-2p);
+}
+
 /* Özel Animasyonlar */
 @keyframes spin-slow {
   from {

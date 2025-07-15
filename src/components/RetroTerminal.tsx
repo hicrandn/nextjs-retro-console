@@ -8,7 +8,7 @@ interface RetroTerminalProps {
 
 export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
-  const { playTypingSound, playBeepSound } = useRetroSound();
+  const { playTypingSound } = useRetroSound();
 
   // Terminal komutları - memoized
   const terminalCommands = useMemo(
@@ -47,15 +47,10 @@ export const RetroTerminal = ({ isActive }: RetroTerminalProps) => {
         lineIndex++;
       } else {
         clearInterval(terminalInterval);
-        try {
-          playBeepSound(); // Terminal tamamlandı sesi
-        } catch (error) {
-          console.warn("Terminal beep sesi çalınamadı:", error);
-        }
       }
     }, 800);
     return () => clearInterval(terminalInterval);
-  }, [isActive, terminalCommands, playTypingSound, playBeepSound]);
+  }, [isActive, terminalCommands, playTypingSound]);
 
   // isActive değiştiğinde terminal'i sıfırla
   useEffect(() => {

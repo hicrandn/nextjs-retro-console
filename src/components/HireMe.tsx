@@ -53,7 +53,7 @@ export const HireMe = () => {
               <h1
                 className={clsx(
                   "text-2xl font-bold text-[#CCCCCC] tracking-wider drop-shadow-lg transition-all duration-200",
-                  "font-['Press_Start_2P']",
+                  "font-press-start-2p",
                   glitchActive && "animate-pulse"
                 )}
               >
@@ -61,7 +61,7 @@ export const HireMe = () => {
                   text="HIRE ME"
                   speed={150}
                   onComplete={() => setIsTitleComplete(true)}
-                  className="text-2xl font-bold text-[#CCCCCC] tracking-wider drop-shadow-lg font-['Press_Start_2P']"
+                  className="text-2xl font-bold text-[#CCCCCC] tracking-wider drop-shadow-lg font-press-start-2p"
                 />
               </h1>
               <span
@@ -80,14 +80,14 @@ export const HireMe = () => {
             <p
               className={clsx(
                 "text-[#CCCCCC] text-sm drop-shadow-md tracking-wide",
-                "font-['Press_Start_2P']"
+                "font-press-start-2p"
               )}
             >
               <RetroTyping
                 text="FULL-STACK DEVELOPER"
                 speed={100}
                 onComplete={() => setIsSubtitleComplete(true)}
-                className="text-[#CCCCCC] text-sm drop-shadow-md tracking-wide font-['Press_Start_2P']"
+                className="text-[#CCCCCC] text-sm drop-shadow-md tracking-wide font-press-start-2p"
                 showCursor={isTitleComplete}
               />
             </p>
@@ -101,14 +101,14 @@ export const HireMe = () => {
           <div className="absolute inset-0 rounded-2xl border border-green-400/30 pointer-events-none"></div>
         </Card>
         <div className="absolute bottom-2 right-4 z-10">
-          <div className="flex items-center gap-2 text-green-400 font-['Press_Start_2P'] text-xs">
+          <div className="flex items-center gap-2 text-green-400 font-press-start-2p text-xs">
             <Heart
               size={16}
               className="text-red-500"
               fill="none"
               strokeWidth={2}
             />
-            <span className="font-['Press_Start_2P'] tracking-wide">BY ME</span>
+            <span className="font-press-start-2p tracking-wide">BY ME</span>
           </div>
         </div>
       </div>
