@@ -9,7 +9,6 @@ Bu proje, retro tarzında bir portföy web sitesidir. Next.js 15, React 19, Type
 - **Ses Efektleri**: Retro ses efektleri ve beep sesleri
 - **Matrix Rain**: Arka planda düşen karakterler
 - **Responsive Tasarım**: Tüm cihazlarda uyumlu
-- **Error Handling**: Kapsamlı hata yönetimi
 - **Performance Optimized**: React best practices ile optimize edilmiş
 
 ## 🛠️ Teknolojiler
@@ -20,6 +19,7 @@ Bu proje, retro tarzında bir portföy web sitesidir. Next.js 15, React 19, Type
 - **Tailwind CSS 4** - Styling
 - **Radix UI** - UI bileşenleri
 - **Lucide React** - İkonlar
+- **Motion** - Animasyonlar
 
 ## 📦 Kurulum
 
@@ -47,9 +47,6 @@ src/
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Ana layout
 │   ├── page.tsx           # Ana sayfa
-│   ├── loading.tsx        # Loading sayfası
-│   ├── not-found.tsx      # 404 sayfası
-│   ├── global-error.tsx   # Global error sayfası
 │   └── globals.css        # Global stiller
 ├── components/            # React bileşenleri
 │   ├── HireMe.tsx        # Ana portföy bileşeni
@@ -57,12 +54,17 @@ src/
 │   ├── RetroTerminal.tsx # Terminal efekti
 │   ├── RetroBackground.tsx # Arka plan efektleri
 │   ├── RetroSound.tsx    # Ses efektleri hook'u
-│   ├── ErrorBoundary.tsx # Hata sınırı
 │   └── ui/               # UI bileşenleri
+│       └── card.tsx      # Card bileşeni
 └── lib/                  # Yardımcı fonksiyonlar
+    └── utils.ts          # Utility fonksiyonları
 ```
 
 ## 🎨 Bileşenler
+
+### HireMe
+
+Ana portföy bileşeni. Glassmorphism tasarımı ile retro kart görünümü.
 
 ### RetroTyping
 
@@ -86,13 +88,11 @@ Web Audio API kullanarak retro ses efektleri üretir.
 
 - TypeScript strict mode
 - ESLint ile kod kalitesi
-- Prettier ile kod formatı
 - React best practices
 
 ### Performance Optimizasyonları
 
 - useCallback ve useMemo kullanımı
-- Lazy loading
 - Error boundaries
 - Optimized re-renders
 
