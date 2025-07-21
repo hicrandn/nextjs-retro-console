@@ -41,7 +41,7 @@ export const HireMe = () => {
       <div className="relative z-10">
         <Card
           className={clsx(
-            "w-180  bg-black/50 backdrop-blur-sm border-green-400/30 relative overflow-hidden transition-all duration-200 "
+            "w-150  bg-black/50 backdrop-blur-sm border-green-400/30 relative overflow-hidden transition-all duration-200 "
           )}
         >
           {/* Glassmorphism İç Katman */}

@@ -20,14 +20,14 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Hire Me - Full Stack Developer",
+  title: "Hicran Apaydin - Front-end Developer",
   description:
     "Professional portfolio showcasing React, Next.js, TypeScript, and more",
   keywords: [
     "React",
     "Next.js",
     "TypeScript",
-    "Full Stack Developer",
+    "Front-end Developer",
     "Portfolio",
   ],
   authors: [{ name: "Hicran Apaydin" }],
