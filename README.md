@@ -1,4 +1,7 @@
-# Funny Things - Retro Portfolio
+#  - Retro Console Portfolio
+
+<img width="1045" height="631" alt="image" src="https://github.com/user-attachments/assets/13cc6bb2-0f1a-4015-9ed0-2f6ca04ba8ba" />
+
 
 Bu proje, retro tarzında bir portföy web sitesidir. Next.js 15, React 19, TypeScript ve Tailwind CSS kullanılarak geliştirilmiştir.
 
