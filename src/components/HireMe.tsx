@@ -41,7 +41,7 @@ export const HireMe = () => {
       <div className="relative z-10">
         <Card
           className={clsx(
-            "w-120 min-h-[18rem] bg-black/50 backdrop-blur-sm border-green-400/30 relative overflow-hidden transition-all duration-200 "
+            "w-180  bg-black/50 backdrop-blur-sm border-green-400/30 relative overflow-hidden transition-all duration-200 "
           )}
         >
           {/* Glassmorphism İç Katman */}
@@ -57,7 +57,7 @@ export const HireMe = () => {
                 )}
               >
                 <RetroTyping
-                  text="HIRE ME"
+                  text="System Online!"
                   speed={150}
                   onComplete={() => setIsTitleComplete(true)}
                   className="text-2xl font-bold text-[#CCCCCC] tracking-wider drop-shadow-lg font-press-start-2p"
@@ -107,7 +107,7 @@ export const HireMe = () => {
               fill="none"
               strokeWidth={2}
             />
-            <span className="font-press-start-2p tracking-wide">BY ME</span>
+            <span className="font-press-start-2p tracking-wide">Say Hello</span>
           </div>
         </div>
       </div>

@@ -38,49 +38,6 @@ yarn start
 
 # Linting
 yarn lint
-```
-
-## 🏗️ Proje Yapısı
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Ana layout
-│   ├── page.tsx           # Ana sayfa
-│   └── globals.css        # Global stiller
-├── components/            # React bileşenleri
-│   ├── HireMe.tsx        # Ana portföy bileşeni
-│   ├── RetroTyping.tsx   # Typing animasyonu
-│   ├── RetroTerminal.tsx # Terminal efekti
-│   ├── RetroBackground.tsx # Arka plan efektleri
-│   ├── RetroSound.tsx    # Ses efektleri hook'u
-│   └── ui/               # UI bileşenleri
-│       └── card.tsx      # Card bileşeni
-└── lib/                  # Yardımcı fonksiyonlar
-    └── utils.ts          # Utility fonksiyonları
-```
-
-## 🎨 Bileşenler
-
-### HireMe
-
-Ana portföy bileşeni. Glassmorphism tasarımı ile retro kart görünümü.
-
-### RetroTyping
-
-Karakter karakter yazma animasyonu. Ses efektleri ile birlikte çalışır.
-
-### RetroTerminal
-
-Terminal benzeri komut çıktıları. Portföy bilgilerini gösterir.
-
-### RetroBackground
-
-Matrix rain efekti ve CRT scanlines ile retro arka plan.
-
-### RetroSound
-
-Web Audio API kullanarak retro ses efektleri üretir.
 
 ## 🔧 Geliştirme
 
@@ -90,26 +47,6 @@ Web Audio API kullanarak retro ses efektleri üretir.
 - ESLint ile kod kalitesi
 - React best practices
 
-### Performance Optimizasyonları
-
-- useCallback ve useMemo kullanımı
-- Error boundaries
-- Optimized re-renders
-
-## 🚀 Deployment
-
-Bu proje Vercel'de deploy edilmek üzere optimize edilmiştir:
-
-```bash
-# Vercel CLI ile deploy
-vercel
-
-# Veya GitHub'dan otomatik deploy
-```
-
-## 📝 Lisans
-
-MIT License
 
 ## 👨‍💻 Geliştirici
 
@@ -117,3 +54,4 @@ MIT License
 
 - 📧 hicran.apaydin@gmail.com
 - 🌐 github.com/hicrandn
+```
