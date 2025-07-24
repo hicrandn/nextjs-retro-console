@@ -5,11 +5,12 @@
 
 Bu proje, retro tarzında bir portföy web sitesidir. Next.js 15, React 19, TypeScript ve Tailwind CSS kullanılarak geliştirilmiştir.
 
+Demo: https://nextjs-retro-console.vercel.app/
+
 ## 🚀 Özellikler
 
 - **Retro Tasarım**: CRT monitör efektleri ve retro animasyonlar
 - **Typing Animasyonu**: Karakter karakter yazma efekti
-- **Ses Efektleri**: Retro ses efektleri ve beep sesleri
 - **Matrix Rain**: Arka planda düşen karakterler
 - **Responsive Tasarım**: Tüm cihazlarda uyumlu
 - **Performance Optimized**: React best practices ile optimize edilmiş
@@ -41,14 +42,6 @@ yarn start
 
 # Linting
 yarn lint
-
-## 🔧 Geliştirme
-
-### Kod Standartları
-
-- TypeScript strict mode
-- ESLint ile kod kalitesi
-- React best practices
 
 
 ## 👨‍💻 Geliştirici
