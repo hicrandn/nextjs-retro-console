@@ -53,7 +53,7 @@ yarn lint
 
 ## 👨‍💻 Geliştirici
 
-**Hicran Apaydin** - Full Stack Developer
+**Hicran Apaydin** - Front-end Developer
 
 - 📧 hicran.apaydin@gmail.com
 - 🌐 github.com/hicrandn
